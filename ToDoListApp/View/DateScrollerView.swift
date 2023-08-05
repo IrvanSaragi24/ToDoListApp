@@ -12,7 +12,7 @@ struct DateScrollerView: View {
     @EnvironmentObject var dateHolder : DateHolder
     var body: some View {
         VStack{
-            Spacer()
+            Spacer()  
             HStack{
                 Button(action : moveBack){
                     Image(systemName: "chevron.backward")
