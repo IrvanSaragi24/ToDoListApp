@@ -55,7 +55,6 @@
 		E27E00D22A7B970F00BF070E = {
 			isa = PBXGroup;
 			children = (
-				E2F8522B2A7E20BB00B7AF92 /* FilterTask.swift */,
 				E27E00DD2A7B970F00BF070E /* ToDoListApp */,
 				E27E00DC2A7B970F00BF070E /* Products */,
 			);
@@ -107,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E27E00E72A7B970F00BF070E /* Persistence.swift */,
+				E2F8522B2A7E20BB00B7AF92 /* FilterTask.swift */,
 				E2F8521F2A7DDFD200B7AF92 /* DateHolder.swift */,
 				E2F852272A7DFF2E00B7AF92 /* TaskItemExtenstion.swift */,
 			);

@@ -10,6 +10,8 @@ import SwiftUI
 struct CellTaskView: View {
     @EnvironmentObject var dateHolder : DateHolder
     @ObservedObject var passedTaskItem : TaskItem
+    
+    
     var body: some View {
         HStack{
             
@@ -17,6 +19,7 @@ struct CellTaskView: View {
                 .environmentObject(dateHolder)
             Text(passedTaskItem.name ?? "")
                 .padding(.horizontal)
+                .strikethrough(passedTaskItem.isCompleted())
             
             if !passedTaskItem.isCompleted() && passedTaskItem.scheduleTime{
                 Spacer()
