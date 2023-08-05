@@ -11,11 +11,19 @@ struct CellTaskView: View {
     @EnvironmentObject var dateHolder : DateHolder
     @ObservedObject var passedTaskItem : TaskItem
     var body: some View {
-        
-        CheckBoxView(passedTaskItem: passedTaskItem)
-            .environmentObject(dateHolder)
-        Text(passedTaskItem.name ?? "")
-            .padding(.horizontal)
+        HStack{
+            
+            CheckBoxView(passedTaskItem: passedTaskItem)
+                .environmentObject(dateHolder)
+            Text(passedTaskItem.name ?? "")
+                .padding(.horizontal)
+            
+            if !passedTaskItem.isCompleted() && passedTaskItem.scheduleTime{
+                Spacer()
+                Text(passedTaskItem.dueDateTimeOnly())
+                    .foregroundColor(passedTaskItem.overDueColor())
+            }
+        }
     }
 }
 
