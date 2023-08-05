@@ -27,17 +27,22 @@ struct TaskListView: View {
                         ForEach(items) { taskItem in
                             NavigationLink(destination: EditTaskView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder))
                             {
-//                                Text(taskItem.dueDate!, formatter: itemFormatter)
+                                //                                Text(taskItem.dueDate!, formatter: itemFormatter)
                                 CellTaskView(passedTaskItem: taskItem)
                             }
                         }
                         .onDelete(perform: deleteItems)
+                        
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             EditButton()
                         }
                     }
+                    DateScrollerView()
+                        .padding()
+                        .environmentObject(dateHolder)
+                        .padding(.bottom, 100)
                     ButtonTaskView()
                         .environmentObject(dateHolder)
                 }
@@ -54,7 +59,7 @@ struct TaskListView: View {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
             
-                dateHolder.saveContext(viewContext)
+            dateHolder.saveContext(viewContext)
         }
     }
 }

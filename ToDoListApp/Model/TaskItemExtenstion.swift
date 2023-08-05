@@ -21,7 +21,7 @@ extension TaskItem{
     }
     
     func overDueColor () -> Color{
-        return isOverDue() ? .black : .red
+        return isOverDue() ? .red : .black
     }
     
     func dueDateTimeOnly() -> String{
