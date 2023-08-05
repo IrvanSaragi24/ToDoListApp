@@ -41,6 +41,7 @@ struct EditTaskView: View {
             Section(header : Text("Task")){
                 TextField("Task", text: $name)
                 TextField("Description", text: $desc)
+                    .font(.system(size: 15, weight: .thin))
             }
             Section(header : Text("Due Date")){
                 Toggle("Schedule Time", isOn: $scheduleTime)
@@ -73,6 +74,7 @@ struct EditTaskView: View {
             
             selectedTaskItem?.created = Date()
             selectedTaskItem?.name = name
+            selectedTaskItem?.desc = desc
             selectedTaskItem?.dueDate = dueDate
             selectedTaskItem?.scheduleTime = scheduleTime
             

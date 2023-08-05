@@ -31,13 +31,16 @@ struct TaskListView: View {
                         ForEach(filteredTaskItems()) { taskItem in
                             NavigationLink(destination: EditTaskView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder))
                             {
-                        
+                                
                                 CellTaskView(passedTaskItem: taskItem)
                             }
                         }
                         .onDelete(perform: deleteItems)
                         
+                        
+                        
                     }
+                    //                    .listStyle(PlainListStyle())
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             ButtonTaskView()
@@ -46,7 +49,7 @@ struct TaskListView: View {
                     DateScrollerView()
                         .padding()
                         .environmentObject(dateHolder)
-
+                    
                 }
             }
             .navigationTitle("To Do List")
