@@ -11,7 +11,7 @@ import CoreData
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder : DateHolder
-    @State var selectedFilter = TaskFilter.NonCompleted
+    @State var selectedFilter = TaskFilter.All
     
     var body: some View {
         NavigationView {
