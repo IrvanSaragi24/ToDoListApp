@@ -46,6 +46,12 @@ struct EditTaskView: View {
                 Toggle("Schedule Time", isOn: $scheduleTime)
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: displayComp())
             }
+            if selectedTaskItem?.isCompleted() ?? false{
+                Section(header : Text("Completed")){
+                    Text(selectedTaskItem?.completedDate?.formatted(date: .abbreviated, time: .shortened) ?? "")
+                        .foregroundColor(.green)
+                }
+            }
             
             Section {
                 Button("Save", action: ActionSave)
