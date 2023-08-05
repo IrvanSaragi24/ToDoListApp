@@ -11,23 +11,27 @@ import CoreData
 struct TaskListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dateHolder : DateHolder
-    
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \TaskItem.dueDate, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<TaskItem>
+    @State var selectedFilter = TaskFilter.NonCompleted
     
     var body: some View {
         NavigationView {
             VStack{
+                Picker("", selection: $selectedFilter.animation())
+                {
+                    ForEach(TaskFilter.allFilters, id: \.self)
+                    {
+                        filter in
+                        Text(filter.rawValue)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
                 ZStack{
-                    
-                    
                     List {
-                        ForEach(dateHolder.taskItems) { taskItem in
+                        ForEach(filteredTaskItems()) { taskItem in
                             NavigationLink(destination: EditTaskView(passedTaskItem: taskItem, initialDate: Date()).environmentObject(dateHolder))
                             {
-                                //                                Text(taskItem.dueDate!, formatter: itemFormatter)
+                        
                                 CellTaskView(passedTaskItem: taskItem)
                             }
                         }
@@ -36,21 +40,38 @@ struct TaskListView: View {
                     }
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
+                            ButtonTaskView()
                         }
                     }
                     DateScrollerView()
                         .padding()
                         .environmentObject(dateHolder)
-                        .padding(.bottom, 100)
-                    ButtonTaskView()
-                        .environmentObject(dateHolder)
+
                 }
             }
             .navigationTitle("To Do List")
         }
     }
     
+    private func filteredTaskItems() -> [TaskItem]
+    {
+        if selectedFilter == TaskFilter.Completed
+        {
+            return dateHolder.taskItems.filter{ $0.isCompleted()}
+        }
+        
+        if selectedFilter == TaskFilter.NonCompleted
+        {
+            return dateHolder.taskItems.filter{ !$0.isCompleted()}
+        }
+        
+        if selectedFilter == TaskFilter.OverDue
+        {
+            return dateHolder.taskItems.filter{ $0.isOverDue()}
+        }
+        
+        return dateHolder.taskItems
+    }
     
     
     

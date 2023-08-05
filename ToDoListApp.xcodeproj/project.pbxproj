@@ -20,6 +20,7 @@
 		E2F852262A7DFDBB00B7AF92 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F852252A7DFDBB00B7AF92 /* CheckBoxView.swift */; };
 		E2F852282A7DFF2E00B7AF92 /* TaskItemExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F852272A7DFF2E00B7AF92 /* TaskItemExtenstion.swift */; };
 		E2F8522A2A7E0C3000B7AF92 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F852292A7E0C2F00B7AF92 /* DateScrollerView.swift */; };
+		E2F8522C2A7E20BB00B7AF92 /* FilterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8522B2A7E20BB00B7AF92 /* FilterTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E2F852252A7DFDBB00B7AF92 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		E2F852272A7DFF2E00B7AF92 /* TaskItemExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemExtenstion.swift; sourceTree = "<group>"; };
 		E2F852292A7E0C2F00B7AF92 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
+		E2F8522B2A7E20BB00B7AF92 /* FilterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		E27E00D22A7B970F00BF070E = {
 			isa = PBXGroup;
 			children = (
+				E2F8522B2A7E20BB00B7AF92 /* FilterTask.swift */,
 				E27E00DD2A7B970F00BF070E /* ToDoListApp */,
 				E27E00DC2A7B970F00BF070E /* Products */,
 			);
@@ -73,7 +76,6 @@
 				E2F852222A7DF90000B7AF92 /* Model */,
 				E2F852212A7DF8E600B7AF92 /* View */,
 				E27E00E22A7B970F00BF070E /* Assets.xcassets */,
-				E2F8521F2A7DDFD200B7AF92 /* DateHolder.swift */,
 				E27E00E92A7B970F00BF070E /* ToDoListApp.xcdatamodeld */,
 				E27E00E42A7B970F00BF070E /* Preview Content */,
 			);
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E27E00E72A7B970F00BF070E /* Persistence.swift */,
+				E2F8521F2A7DDFD200B7AF92 /* DateHolder.swift */,
 				E2F852272A7DFF2E00B7AF92 /* TaskItemExtenstion.swift */,
 			);
 			path = Model;
@@ -184,6 +187,7 @@
 				E2F8521C2A7DD2A800B7AF92 /* ButtonTaskView.swift in Sources */,
 				E27E00E82A7B970F00BF070E /* Persistence.swift in Sources */,
 				E2F852242A7DF96500B7AF92 /* CellTaskView.swift in Sources */,
+				E2F8522C2A7E20BB00B7AF92 /* FilterTask.swift in Sources */,
 				E2F852262A7DFDBB00B7AF92 /* CheckBoxView.swift in Sources */,
 				E27E00E12A7B970F00BF070E /* TaskListView.swift in Sources */,
 				E2F8521E2A7DD2DD00B7AF92 /* EditTaskView.swift in Sources */,

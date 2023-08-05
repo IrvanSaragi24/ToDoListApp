@@ -15,15 +15,8 @@ struct ButtonTaskView: View {
             HStack{
                 NavigationLink(destination: EditTaskView(passedTaskItem: nil, initialDate: Date())
                     .environmentObject(dateHolder)) {
-                    Text("Add Task")
-                        .font(.headline)
+                        Image(systemName: "note.text.badge.plus")
                 }
-                .padding(15)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(30)
-                .padding(30)
-                .shadow(color: .black, radius: 5)
             }
         }
     }
